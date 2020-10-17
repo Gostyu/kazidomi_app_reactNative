@@ -1,0 +1,1 @@
+# kazidomi_app_reactNative
