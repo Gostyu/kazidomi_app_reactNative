@@ -1,13 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import DATA from "./data/dataBlogPost";
+import AppHeader from "./components/AppHeader"
+import AppBody from "./components/AppBody"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-    </View>
+      <ScrollView>
+        <AppHeader></AppHeader>
+        <AppBody dataPost={DATA}></AppBody>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -15,7 +22,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
