@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View,ScrollView } from 'react-native';
+import { StyleSheet,ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import DATA from "./data/dataBlogPost";
 import AppHeader from "./components/AppHeader"

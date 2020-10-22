@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import PostList from "./components/PostList";
+import PostList from "./PostList";
 
 const AppBody = ({dataPost}) => {
     return (
