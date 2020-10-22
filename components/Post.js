@@ -2,24 +2,35 @@ import React from 'react'
 import { StyleSheet, Text, View,Image } from 'react-native'
 import themeColor from '../theme/colors'
 import themeText from '../theme/typography'
+const PostHeader=({imgUrl})=>{
+    return (
+        <View style={styles.post_header}>
+        <Image style={style.post_img} source={{uri=imgUrl}}></Image>
+    </View>);
+}
+const PostBody=({category,title,description,date})=>{
+  return (<View style={styles.post_body}>
+                <Text style={styles.post_category}>{category}</Text>
+                <Text style={styles.post_title}>{title}</Text>
+                <Text style={styles.post_description}>{description}</Text>
+                <Text style={styles.post_date}>{date}</Text>
+     </View>)
+}
 const Post = ({imgUrl,category,title,description,date}) => {
     return (
-        <View style={styles.card}>
-            <View style={styles.card_header}>
-                <Image style={style.card_img} source={{uri=imgUrl}}></Image>
-            </View>
-            <View style={styles.card_body}>
-                <Text style={styles.card_category}>{category}</Text>
-                <Text style={styles.card_title}>{title}</Text>
-                <Text style={styles.card_description}>{description}</Text>
-                <Text style={styles.card_date}>{date}</Text>
-            </View>
+        <View style={styles.post}>
+           <PostHeader imgUrl={imgUrl}/>
+            <PostBody category={category}
+                title={title}
+                description={description}
+                date={date}
+            />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    card:{
+    post:{
         width:270.37,
         height:288.84,
         flex:1,
@@ -38,17 +49,17 @@ const styles = StyleSheet.create({
         marginBottom:29,
         paddingBottom:15.59,
     },
-    card_header:{
+    post_header:{
         width:270.37,        
         marginHorizontal:13.43,
         marginVertical:8,
         marginTop:16,
     },
-    card_image:{
+    post_image:{
         width:243.5,
         height:141.06,
     },
-    card_body:{
+    post_body:{
         flex:1,
         flexDirection:'column',
         justifyContent:'center',
@@ -58,20 +69,20 @@ const styles = StyleSheet.create({
         height:109,
         padding:14.92,
     },
-    card_category:{
+    post_category:{
         color:themeColor.LIGHTGREEN,
         fontSize:themeText.textCategoryFontSize,
     },
-    card_title:{
+    post_title:{
         color:themeColor.DARKBLUE,
         fontSize:themeText.titleFontSize,
         fontWeight:'bold',
     },
-    card_description:{
+    post_description:{
         color:themeColor.LIGHT_DARKBLUE,
         fontSize:themeText.textFontSize,
     },
-    card_date:{
+    post_date:{
         color:themeColor.LIGHTGRAY,
         fontSize:themeText.textDateFontSize,
     }
