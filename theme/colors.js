@@ -1,0 +1,11 @@
+const DARKBLUE = "#3B4B5B";
+const LIGHTGREEN = "#00C0BB";
+const LIGHT_DARKBLUE="#171717";
+const LIGHTGRAY = "#757575";
+const BLURRED_BLUE ="#00C0BB";
+export default{DARKBLUE,
+    LIGHTGREEN,
+    LIGHT_DARKBLUE,
+    LIGHTGRAY,
+    BLURRED_BLUE,
+}
