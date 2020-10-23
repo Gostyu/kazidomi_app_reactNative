@@ -2,10 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet,ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import AppHeader from "./components/AppHeader";
+import AppBody from "./components/AppBody";
 import DATA from "./data/dataBlogPost";
-import AppHeader from "./components/AppHeader"
-import AppBody from "./components/AppBody"
-
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>

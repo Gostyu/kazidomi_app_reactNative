@@ -2,7 +2,8 @@ import React from 'react'
 import { StyleSheet, View,Image } from 'react-native'
 const PostHeader=({imgUrl})=>{
     return (<View style={styles.post_header}>
-        <Image style={styles.post_img} source={{uri:imgUrl}}></Image>
+         <Image style={styles.post_img} 
+         source={{uri:imgUrl}}/>
     </View>);
 }
 const styles = StyleSheet.create({
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
         marginVertical:8,
         marginTop:16,
     },
-    post_image:{
+    post_img:{
         width:243.5,
         height:141.06,
     },

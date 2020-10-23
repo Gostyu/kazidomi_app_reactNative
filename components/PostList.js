@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Post from "./Post/Post";
 const PostList = ({dataPost}) => {
     const renderPostList = dataPost.map((item,index)=>{

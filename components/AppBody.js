@@ -1,11 +1,13 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import PostList from "./PostList";
+import themeColor from "../theme/colors"
+import themeText from '../theme/typography'
 
 const AppBody = ({dataPost}) => {
     return (
         <View style={styles.appBody}>
-        <Text>Derniers articles</Text>
+        <Text style={styles.appBodyTitle}>Derniers articles</Text>
         <PostList style={styles.postList} dataPost={dataPost}/>
       </View>
     )
@@ -24,4 +26,11 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center"
       },
+      appBodyTitle:{
+        alignSelf:"flex-start",
+        left:27,
+        color:themeColor.DARKBLUE,
+        fontWeight:'bold',
+        fontSize:themeText.appTitleFontSize,
+      }
 })

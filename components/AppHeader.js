@@ -1,14 +1,12 @@
-import React from 'react'
-import { StyleSheet, View,Image,Dimensions} from 'react-native'
+import React from 'react';
+import { StyleSheet, View,Image,Dimensions} from 'react-native';
 
 const widthDevice = Dimensions.get("window").width;
 const AppHeader = () => {
-    return (
-        <View style={styles.header}>
+    return (<View style={styles.header}>
              <Image source={require("../assets/kazidomi-logo-resp.png")}></Image>
-        </View>
-    )
-}
+        </View>)
+};
 
 const styles = StyleSheet.create({
     header:{
@@ -17,7 +15,6 @@ const styles = StyleSheet.create({
         alignItems:"center",
         width:widthDevice,
         height:87,
-        marginBottom:39,
     },
 })
 export default AppHeader
