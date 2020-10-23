@@ -1,23 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React,{useEffect} from 'react';
 import { StyleSheet,ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Constants, Permissions } from 'expo';
+import { Constants } from 'expo';
+import * as Permissions from 'expo-permissions';
 import AppHeader from "./components/AppHeader";
 import AppBody from "./components/AppBody";
 import DATA from "./data/dataBlogPost";
 import Notification from "./components/Notification"
 export default function App() {
-  useEffect(() => {
-    let result = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-    if (result.status === 'granted') {
-     console.log('Notification permissions granted.');
-     Notification.setNotifications();
-    } else {
-        console.log('No Permission', Constants.lisDevice);
+  useEffect(() =>  {
+    const getNoticaficationPermissionAndSetup= async ()=> {
+      try{
+      let {status} = await Permissions.getAsync(Permissions.NOTIFICATIONS);
+      if (status === 'granted') {
+      console.log('Notification permissions granted.');
+      Notification._setScheduledLocalNotification(DATA[0].title);
+      } else {
+          console.log('No Permission', Constants.lisDevice);
+      }
+      Notification.listenNotification();
+      }catch(error){
+        console.error(error)
+      }
     }
-    Notification.listenForNotifications();
-  })
+    getNoticaficationPermissionAndSetup();
+  },[])
 
   return (
     <SafeAreaView style={styles.container}>

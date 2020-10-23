@@ -1,8 +1,8 @@
-import * as Notifications from 'expo-notifications';
+import { Notifications } from 'expo';
 
 
 class Notification {
-    static setScheduledLocalNotification(data){
+    static _setScheduledLocalNotification(data){
         Notifications.cancelAllScheduledNotificationsAsync();
         const notification = {
             title:`Kazidomi`,
@@ -16,13 +16,13 @@ class Notification {
             }
         };
         const schedulingOptions={
-            time:(new Date()).getTime() +1000 * 60,
-            repeat:"minute"
+            time:(new Date()).getMinutes() +1 * 2, 
+            repeat:'minute'
         };
-        Notifications.setScheduledLocalNotificationAsync(notification,schedulingOptions)   
+        Notifications.scheduleLocalNotificationAsync(notification,schedulingOptions);
     }
     static listenNotification(){
-        Notification.addListener(notification=>{
+        Notifications.addListener(notification=>{
             console.log('notification has been received',notification);
         })
     }
