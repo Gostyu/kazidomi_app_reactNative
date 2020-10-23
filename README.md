@@ -1,0 +1,1 @@
+# Kazidomi App test
